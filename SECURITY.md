@@ -39,6 +39,8 @@ Les personnes qui identifient des vulnérabilités doivent se comporter de mani�
 
 ## Conclusion
 
-La sécurité est une priorité pour le projet Zéphyr. Nous travaillons en permanence pour améliorer la sécurité du bot et garantir une expérience utilisateur fiable et protégée. Si vous avez des questions ou des préoccupations concernant la sécurité, n'hésitez pas à nous contacter à l'adresse <security@zephyrbot.xyz>.
+La sécurité est une priorité pour le projet Zéphyr. Nous travaillons en permanence pour améliorer la sécurité du bot et garantir une expérience utilisateur fiable et protégée. Si vous avez des questions ou des préoccupations concernant la sécurité, n'hésitez pas à nous contacter en ouvrant un ticket sur notre discord.
+
+[Cliquez-ici pour rejoindre le Discord](https://discord.gg/NE5SQwjJp4)
 
 > Ce document sera mis à jour régulièrement pour refléter les meilleures pratiques et les changements dans notre politique de sécurité.
