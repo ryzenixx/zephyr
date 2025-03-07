@@ -38,7 +38,7 @@ Ce Code de Conduite s'applique à tous les espaces de la communauté Zéphyr, y 
 
 ## Application
 
-Les incidents de comportements abusifs ou inacceptables peuvent être signalés aux administrateurs de la communauté à <support@zephyrbot.xyz>. Tous les rapports seront examinés et traités de manière équitable.
+Les incidents de comportements abusifs ou inacceptables peuvent être signalés aux administrateurs de la communauté sur Discord. Tous les rapports seront examinés et traités de manière équitable.
 
 Les administrateurs sont tenus de respecter la confidentialité des rapports.
 
