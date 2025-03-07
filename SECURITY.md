@@ -6,7 +6,7 @@ Le projet Zéphyr prend la sécurité des utilisateurs et des contributeurs trè
 
 Si vous découvrez une vulnérabilité ou un problème de sécurité concernant le bot Zéphyr, nous vous encourageons à le signaler immédiatement. Nous prendrons toutes les mesures nécessaires pour corriger le problème dans les plus brefs délais. Voici comment procéder :
 
-1. **Signalement Direct :** Contactez-nous en ouvrant un ticket sur Discord.
+1. **Signalement Direct :** Contactez-nous en ouvrant un ticket sur [notre Discord](https://discord.gg/NE5SQwjJp4).
 2. **Informations requises :**
    - Description détaillée de la vulnérabilité.
    - Étapes pour reproduire le problème.
