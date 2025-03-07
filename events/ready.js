@@ -5,7 +5,7 @@ const loadDatabase = require("../loaders/loadDataBase")
 module.exports = async (bot) => {
   async function connectToDataBase() {
     try {
-      bot.db = await loadDatabase()
+      bot.db = loadDatabase()
       bot.db.connect(function () {
         console.log("Connecté à la base de données")
       })
@@ -14,7 +14,7 @@ module.exports = async (bot) => {
         console.log("Erreur de la base de données:", err)
         if (err.code === "ECONNRESET") {
           try {
-            const db = await loadDatabase()
+            const db = loadDatabase()
             console.log("Reconnecté à la base de donnée !")
             bot.db = db
           } catch (errDB) {
@@ -40,8 +40,8 @@ module.exports = async (bot) => {
     status: "online",
     activities: [
       {
-        name: "Votre assistant Discord",
-        type: ActivityType.Custom,
+        name: "Un bot Discord open-source.",
+        type: ActivityType.Custom
       },
     ],
   });
