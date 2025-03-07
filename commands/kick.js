@@ -83,11 +83,11 @@ module.exports = {
                 }
 
                 const embedKicked = new Discord.EmbedBuilder()
-                .setColor(0x9cff8e)
-                .setTitle(`${utilisateur.tag} **a été expulsé.** ✅`)
-                .setDescription(`\n\n**Raison:** ${raison}`)
-                .setTimestamp()
-                .setFooter({ text: 'Zéphyr - Votre assistant Discord', iconURL: bot.user.displayAvatarURL() });
+                    .setColor(0x9cff8e)
+                    .setTitle(`${utilisateur.tag} **a été expulsé.** ✅`)
+                    .setDescription(`\n\n**Raison:** ${raison}`)
+                    .setTimestamp()
+                    .setFooter({ text: 'Zéphyr - Votre assistant Discord', iconURL: bot.user.displayAvatarURL() });
 
                 try {
                     const discordNameButton = new Discord.ActionRowBuilder()
