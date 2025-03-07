@@ -36,7 +36,7 @@ module.exports = async (bot, guild) => {
     db.query(sql, [guildId], (err) => {
         if (err) {
             console.error(err);
-            return interaction.followUp({ content: "❌ Erreur lors de de l'enregistrement du serveur dans la base de données.", ephemeral: true });
+            console.log("❌ Erreur lors de de l'enregistrement du serveur dans la base de données.");
         }
 
         console.log("Serveur ajouté dans la base de donnée.");
