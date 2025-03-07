@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
     name: "kick",
-    description: "Invite Zéphyr sur un autre serveur !",
+    description: "Exclure un utilisateur de ce serveur",
     permission: Discord.PermissionFlagsBits.KickMembers,
     dm: false,
     options: [
