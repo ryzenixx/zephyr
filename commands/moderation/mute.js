@@ -92,6 +92,8 @@ module.exports = {
                         throw new Error('Format de durée invalide');
                     }
                 } catch (error) {
+                    console.error(error);
+
                     const embedInvalidFormat = new Discord.EmbedBuilder()
                         .setColor(0xff4c4c)
                         .setTitle("Oups, une erreur s'est produite... ❌")
@@ -118,6 +120,8 @@ module.exports = {
                 try {
                     member = await interaction.guild.members.fetch(utilisateur.id);
                 } catch (error) {
+                    console.error(error);
+
                     const embedNotInTheServer = new Discord.EmbedBuilder()
                         .setColor(0xff4c4c)
                         .setTitle("Oups, une erreur s'est produite... ❌")
@@ -161,6 +165,7 @@ module.exports = {
                         components: [discordNameButton] 
                     });
                 } catch (error) {
+                    console.error(error);
                     console.log(`Impossible d'envoyer un DM à ${utilisateur.tag}.`);
                 }
     

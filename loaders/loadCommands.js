@@ -12,15 +12,20 @@ module.exports = async bot => {
             if (stat.isDirectory()) {
                 loadCommands(filePath);
             } else if (file.endsWith(".js")) {
+                let command;
                 try {
-                    let command = require(filePath);
+                    command = require(filePath);
                     if (!command.name || typeof command.name !== "string") {
                         throw new TypeError(`La commande ${file.slice(0, file.length - 3)} n'a pas de nom !`);
                     }
                     bot.commands.set(command.name, command);
                     console.log(`Commande ${command.name} chargée avec succès !`);
                 } catch (err) {
-                    console.error(`Erreur lors du chargement de la commande ${command.name}: ${err.message}`);
+                    if (command) {
+                        console.error(`Erreur lors du chargement de la commande ${command.name}: ${err.message}`);
+                    } else {
+                        console.error(`Erreur lors du chargement de la commande ${file}: ${err.message}`);
+                    }
                 }
             }
         });

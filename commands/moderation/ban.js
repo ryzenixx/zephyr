@@ -49,6 +49,8 @@ module.exports = {
                     member = await interaction.guild.members.fetch(utilisateur.id);
                 } catch (error) {
 
+                    console.error(error);
+
                     const embedNotInTheServer = new Discord.EmbedBuilder()
                         .setColor(0xf56868)
                         .setTitle("Oups, une erreur s'est produite... ❌")

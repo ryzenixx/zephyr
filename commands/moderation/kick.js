@@ -49,6 +49,8 @@ module.exports = {
                     member = await interaction.guild.members.fetch(utilisateur.id);
                 } catch (error) {
 
+                    console.error(error);
+
                     const embedNotInTheServer = new Discord.EmbedBuilder()
                         .setColor(0xf56868)
                         .setTitle("Oups, une erreur s'est produite... ❌")
@@ -101,6 +103,7 @@ module.exports = {
 
                     await utilisateur.send({ content: `🚨 **Tu as été expulsé de ${interaction.guild.name}** 🚨\n📌 **Raison :** ${raison}`, components: [discordNameButton] });
                 } catch (error) {
+                    console.error(error);
                     console.log(`Impossible d'envoyer un DM à ${utilisateur.tag}.`);
                 }
 
