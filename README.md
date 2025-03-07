@@ -2,7 +2,7 @@
 
 # ⌛ A propos du projet Zéphyr
 
-> Zéphyr est un bot Discord multi-fonction, et sa particularité est d'être open-source. Toutes contributions pour l'amélioration de Zéphyr est la bienvenue (et c'est même le principe du projet !)
+> Zéphyr est un bot Discord multi-fonction, et sa particularité est d'être open-source. Toutes contributions pour l'amélioration de Zéphyr est la bienvenue **(et c'est même le principe du projet !)**
 
 **🔎 Rejoignez notre Discord :**
 https://discord.gg/NE5SQwjJp4
