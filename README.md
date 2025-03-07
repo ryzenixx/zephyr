@@ -1,0 +1,1 @@
+![Zéphyr, un bot discord open-source](https://cdn.discordapp.com/attachments/1279855951930720370/1347630284212015205/image-removebg-preview.png?ex=67cc8601&is=67cb3481&hm=f1c118cc5abe33875fa32793c6cac44704cc93b900fd5acdeb35181b12b1d140&)
