@@ -1,1 +1,1 @@
-![Zéphyr, un bot discord open-source](https://cdn.discordapp.com/attachments/1279855951930720370/1347631024460533851/image-removebg-preview_1.png?ex=67cc86b2&is=67cb3532&hm=a19c840a478eb7aa78f7ac19bd645f401567031db175a68a734e07a64cf00d5d&)
+![Zéphyr, un bot discord open-source](https://cdn.discordapp.com/attachments/1335410705054044171/1347675046620954714/ddd-removebg-preview.png?ex=67ccafb1&is=67cb5e31&hm=6703ed1a090fddb36dc3cf242b63f33b941467f4527f445d86d31e156a2cde26&)
