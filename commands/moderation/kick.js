@@ -101,7 +101,7 @@ module.exports = {
 
                     await utilisateur.send({ content: `🚨 **Tu as été expulsé de ${interaction.guild.name}** 🚨\n📌 **Raison :** ${raison}`, components: [discordNameButton] });
                 } catch (error) {
-                    console.log(`Impossible d'envoyer un DM à ${user.tag}.`);
+                    console.log(`Impossible d'envoyer un DM à ${utilisateur.tag}.`);
                 }
 
                 await member.kick(raison);
