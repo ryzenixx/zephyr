@@ -10,7 +10,7 @@ https://discord.gg/NE5SQwjJp4
 #
 
 ### 👀 Inviter Zéphyr sur ton serveur !
-[Clique ici pour ajouter Zéphyr et profiter d'un bot multifonction 100% gratuit sur ton serveur !](https://discord.com/oauth2/authorize?client_id=1346170979440787498&permissions=8&integration_type=0&scope=bot+applications.commands)
+[Soutient le projet en plein développement et profite d'un bot multifonction entièrement gratuit !](https://discord.com/oauth2/authorize?client_id=1346170979440787498&permissions=8&integration_type=0&scope=bot+applications.commands)
 
 #
 
