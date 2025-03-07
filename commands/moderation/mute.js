@@ -139,8 +139,6 @@ module.exports = {
                     return interaction.reply({ embeds: [embedNotMutable] });
                 }
     
-                const dateExpiration = new Date(Date.now() + dureeMsTotal);
-    
                 const embedMuted = new Discord.EmbedBuilder()
                     .setColor(0x9cff8e)
                     .setTitle(`${utilisateur.tag} **a été réduit au silence.** ✅`)
