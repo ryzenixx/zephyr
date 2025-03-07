@@ -9,5 +9,10 @@ https://discord.gg/NE5SQwjJp4
 
 #
 
+### 👀 Inviter Zéphyr sur ton serveur !
+[Soutient le projet en plein développement et profite d'un bot multifonction entièrement gratuit !](https://discord.com/oauth2/authorize?client_id=1346170979440787498&permissions=8&integration_type=0&scope=bot+applications.commands)
+
+#
+
 ### 🛠️ Tu souhaites participer à de nouvelles fonctionnalitées sur Zéphyr ?
 Nous t'invitons à faire un **fork** du projet, puis à faire des **PR (pull requests)** pour envoyer en validation tes changements. Elles seront ensuite validés (ou non) par un **administrateur du projet**.
