@@ -39,7 +39,6 @@ module.exports = async (bot, member) => {
             if (role) {
                 try {
                     await member.roles.add(role);
-                    console.log(`Le rôle ${role.name} a été attribué à ${member.user.tag}`);
                 } catch (error) {
                     console.error(`Erreur lors de l'attribution du rôle à ${member.user.tag}:`, error);
                 }
