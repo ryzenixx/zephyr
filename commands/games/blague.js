@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 require("dotenv").config()
+const config = require("../../config.json")
 
 module.exports = {
     name: "blague",
@@ -39,7 +40,7 @@ module.exports = {
             if (!response.ok) {
                 if (response.status === 404) {
                     const embedTypeInvalid = new Discord.EmbedBuilder()
-                        .setColor(0xff4c4c)
+                        .setColor(config.embeds.error)
                         .setTitle("Type de blague non disponible ❌")
                         .setDescription("Ce type de blague n'existe pas. Utilisez l'un des types suivants : global, dev, dark, limit, beauf, blondes.")
                         .setTimestamp()
@@ -69,7 +70,7 @@ module.exports = {
             console.error("Erreur lors de la récupération de la blague:", error);
             
             const embedError = new Discord.EmbedBuilder()
-                .setColor(0xff4c4c)
+                .setColor(config.embeds.error)
                 .setTitle("Oups, une erreur s'est produite... ❌")
                 .setDescription("Impossible de récupérer une blague pour le moment. Veuillez réessayer plus tard.")
                 .setTimestamp()

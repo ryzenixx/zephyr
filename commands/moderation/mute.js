@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../../config.json")
 
 module.exports = {
     name: "mute",
@@ -95,7 +96,7 @@ module.exports = {
                     console.error(error);
 
                     const embedInvalidFormat = new Discord.EmbedBuilder()
-                        .setColor(0xff4c4c)
+                        .setColor(config.embeds.error)
                         .setTitle("Oups, une erreur s'est produite... ❌")
                         .setDescription("Le format de durée est invalide. Utilisez des formats comme '``10m``', '``2h``', '``3j``' ou une combinaison comme '``1h30m``'.")
                         .setTimestamp()
@@ -107,7 +108,7 @@ module.exports = {
                 const maxTimeout = 28 * 24 * 60 * 60 * 1000;
                 if (dureeMsTotal > maxTimeout) {
                     const embedTooLong = new Discord.EmbedBuilder()
-                        .setColor(0xff4c4c)
+                        .setColor(config.embeds.error)
                         .setTitle("Oups, une erreur s'est produite... ❌")
                         .setDescription("Un mute ne peut pas dépasser 28 jours.")
                         .setTimestamp()
@@ -123,7 +124,7 @@ module.exports = {
                     console.error(error);
 
                     const embedNotInTheServer = new Discord.EmbedBuilder()
-                        .setColor(0xff4c4c)
+                        .setColor(config.embeds.error)
                         .setTitle("Oups, une erreur s'est produite... ❌")
                         .setDescription(`L'utilisateur \`\`${utilisateur.tag}\`\` n'est pas dans le serveur.`)
                         .setTimestamp()
@@ -134,7 +135,7 @@ module.exports = {
     
                 if (!member.moderatable) {
                     const embedNotMutable = new Discord.EmbedBuilder()
-                        .setColor(0xff4c4c)
+                        .setColor(config.embeds.error)
                         .setTitle("Oups, une erreur s'est produite... ❌")
                         .setDescription(`Je ne suis pas en mesure de réduire au silence \`\`${utilisateur.tag}\`\`. Vérifiez mes permissions et autorisations sur ce serveur.`)
                         .setTimestamp()
@@ -144,7 +145,7 @@ module.exports = {
                 }
     
                 const embedMuted = new Discord.EmbedBuilder()
-                    .setColor(0x9cff8e)
+                    .setColor(config.embeds.success)
                     .setTitle(`${utilisateur.tag} **a été réduit au silence.** ✅`)
                     .setDescription(`\n\n**Durée:** ${formattedDuration}\n**Raison:** ${raison}`)
                     .setTimestamp()
@@ -176,7 +177,7 @@ module.exports = {
             else {
 
                 const embedDisabled = new Discord.EmbedBuilder()
-                    .setColor(0xf56868)
+                    .setColor(config.embeds.error)
                     .setDescription("**Les commandes de modération sont désactivées sur ce serveur. ❌**")
 
                 await interaction.reply({ embeds: [embedDisabled] })

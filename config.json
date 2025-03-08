@@ -1,0 +1,6 @@
+{
+    "embeds": {
+        "error": "#ff4c4c",
+        "success": "#9af981"
+    }
+}

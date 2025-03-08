@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../../config.json")
 
 module.exports = {
     name: "kick",
@@ -52,7 +53,7 @@ module.exports = {
                     console.error(error);
 
                     const embedNotInTheServer = new Discord.EmbedBuilder()
-                        .setColor(0xf56868)
+                        .setColor(config.embeds.error)
                         .setTitle("Oups, une erreur s'est produite... ❌")
                         .setDescription(`L'utilisateur \`\`${utilisateur.tag}\`\` n'est pas dans ce serveur.`)
                         .setTimestamp()
@@ -64,7 +65,7 @@ module.exports = {
 
                 if(!member.kickable) {
                     const embedNotKickable = new Discord.EmbedBuilder()
-                        .setColor(0xf56868)
+                        .setColor(config.embeds.error)
                         .setTitle("Oups, une erreur s'est produite... ❌")
                         .setDescription(`Je ne suis pas en mesure d'exclure \`\`${utilisateur.tag}\`\`. Vérifiez mes permissions et autorisations sur ce serveur.`)
                         .setTimestamp()
@@ -75,7 +76,7 @@ module.exports = {
 
                 if(!member) {
                     const embedNotInTheServer = new Discord.EmbedBuilder()
-                        .setColor(0xf56868)
+                        .setColor(config.embeds.error)
                         .setTitle("Oups, une erreur s'est produite... ❌")
                         .setDescription(`L'utilisateur \`\`${utilisateur.tag}\`\` n'est pas dans ce serveur.`)
                         .setTimestamp()
@@ -85,7 +86,7 @@ module.exports = {
                 }
 
                 const embedKicked = new Discord.EmbedBuilder()
-                    .setColor(0x9cff8e)
+                    .setColor(config.embeds.success)
                     .setTitle(`${utilisateur.tag} **a été expulsé.** ✅`)
                     .setDescription(`\n\n**Raison:** ${raison}`)
                     .setTimestamp()
@@ -114,7 +115,7 @@ module.exports = {
             else {
 
                 const embedDisabled = new Discord.EmbedBuilder()
-                    .setColor(0xf56868)
+                    .setColor(config.embeds.error)
                     .setDescription("**Les commandes de modération sont désactivées sur ce serveur. ❌**")
 
                 await interaction.reply({ embeds: [embedDisabled] })
