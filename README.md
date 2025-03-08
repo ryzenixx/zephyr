@@ -14,5 +14,5 @@ https://discord.gg/NE5SQwjJp4
 
 #
 
-### 🛠️ Tu souhaites participer à de nouvelles fonctionnalitées sur Zéphyr ?
+### 🛠️ Tu souhaites participer à de nouvelles fonctionnalités sur Zéphyr ?
 Nous t'invitons à faire un **fork** du projet, puis à faire des **PR (pull requests)** pour envoyer en validation tes changements. Elles seront ensuite validés (ou non) par un **administrateur du projet**.
