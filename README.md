@@ -4,7 +4,7 @@
 
 > Zéphyr est un bot Discord multi-fonction, et sa particularité est d'être open-source. Toutes contributions pour l'amélioration de Zéphyr est la bienvenue **(et c'est même le principe du projet !)**
 
-**🔎 Rejoignez notre Discord :**
+**🔎 Rejoignez notre Discord:**
 https://discord.gg/NE5SQwjJp4
 
 #
@@ -14,5 +14,5 @@ https://discord.gg/NE5SQwjJp4
 
 #
 
-### 🛠️ Tu souhaites participer à de nouvelles fonctionnalitées sur Zéphyr ?
+### 🛠️ Tu souhaites participer à de nouvelles fonctionnalités sur Zéphyr ?
 Nous t'invitons à faire un **fork** du projet, puis à faire des **PR (pull requests)** pour envoyer en validation tes changements. Elles seront ensuite validés (ou non) par un **administrateur du projet**.
