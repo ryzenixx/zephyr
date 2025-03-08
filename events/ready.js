@@ -1,6 +1,6 @@
 const { ActivityType } = require("discord.js");
 const loadSlashCommand = require("../loaders/loadSlashCommands")
-const loadDatabase = require("../loaders/loadDataBase")
+const loadDatabase = require("../loaders/loadDatabase")
 
 module.exports = async (bot) => {
   async function connectToDataBase() {
