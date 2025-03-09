@@ -30,7 +30,7 @@ module.exports = async (bot, member) => {
                 console.error(`Le salon spécifié avec l'ID ${result[0].welcome_channel_id} est introuvable.`);
             }
         }
-        
+
 
         if (result.length > 0 && result[0].autorole_enabled) {
             const roleId = result[0].autorole_role_id;
