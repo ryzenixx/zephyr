@@ -541,47 +541,65 @@ module.exports = async (bot, interaction) => {
         }
 
         if (interaction.customId === "confirm_close_ticket") {
+            const sql = `SELECT role_support_ticket_id FROM guild_settings WHERE guild_id = ?`;
+            db.query(sql, [guildId], async (err, result) => {
+                if (err) return console.error(err);
+        
+                if (result.length > 0) {
+                    const roleSupportTicketId = result[0].role_support_ticket_id;
 
-            const ticketChannel = interaction.channel;
+                const ticketChannel = interaction.channel;
 
-            const infoClosedEmbed = new Discord.EmbedBuilder()
-                .setColor(config.embeds.error)
-                .setDescription(`**Vous venez de fermer ce ticket.**`)
+                ticketChannel.permissionOverwrites.set([
+                    {
+                        id: interaction.guild.id,
+                        deny: [Discord.PermissionFlagsBits.ViewChannel],
+                    },
+                    {
+                        id: roleSupportTicketId,
+                        allow: [Discord.PermissionFlagsBits.ViewChannel, Discord.PermissionFlagsBits.SendMessages],
+                    }
+                ])
 
-            const closedEmbed = new Discord.EmbedBuilder()
-                .setColor(config.embeds.error)
-                .setDescription(`**Ce ticket a été fermé par <@${interaction.user.id}>.**`)
-                .setTimestamp();
+                const infoClosedEmbed = new Discord.EmbedBuilder()
+                    .setColor(config.embeds.error)
+                    .setDescription(`**Vous venez de fermer ce ticket.**`)
 
-            const transcriptedEmbed = new Discord.EmbedBuilder()
-                .setColor(config.embeds.error)
-                .setDescription(`**La transcription de ce ticket est disponible en cliquant sur le bouton ci-dessous !** 📜`)
-                .setTimestamp();
+                const closedEmbed = new Discord.EmbedBuilder()
+                    .setColor(config.embeds.error)
+                    .setDescription(`**Ce ticket a été fermé par <@${interaction.user.id}>.**`)
+                    .setTimestamp();
 
-            const attachment = await discordTranscripts.createTranscript(ticketChannel);
+                const transcriptedEmbed = new Discord.EmbedBuilder()
+                    .setColor(config.embeds.error)
+                    .setDescription(`**La transcription de ce ticket est disponible en cliquant sur le bouton ci-dessous !** 📜`)
+                    .setTimestamp();
 
-            const transcriptPath = path.join(transcriptFolder, `${ticketChannel.id}.html`);
-            fs.writeFileSync(transcriptPath, attachment.attachment);
+                const attachment = await discordTranscripts.createTranscript(ticketChannel);
 
-            const transcriptURL = `http://188.165.160.38:${PORT}/transcripts/${ticketChannel.id}.html`;
+                const transcriptPath = path.join(transcriptFolder, `${ticketChannel.id}.html`);
+                fs.writeFileSync(transcriptPath, attachment.attachment);
 
-            const deleteTicketButton = new Discord.ButtonBuilder()
-                .setCustomId("delete_ticket")
-                .setStyle(Discord.ButtonStyle.Danger)
-                .setEmoji("🗑️")
+                const transcriptURL = `http://188.165.160.38:${PORT}/transcripts/${ticketChannel.id}.html`;
 
-            const transcriptTicketButton = new Discord.ButtonBuilder()
-                .setLabel("Accéder au transcript")
-                .setURL(`${transcriptURL}`)
-                .setStyle(Discord.ButtonStyle.Link);
-            
-            const deleteTicketActionRow = new Discord.ActionRowBuilder()
-                .addComponents(deleteTicketButton, transcriptTicketButton)
+                const deleteTicketButton = new Discord.ButtonBuilder()
+                    .setCustomId("delete_ticket")
+                    .setStyle(Discord.ButtonStyle.Danger)
+                    .setEmoji("🗑️")
 
-            await interaction.reply({ embeds: [infoClosedEmbed], ephemeral: true })
-            await interaction.channel.send({ embeds: [closedEmbed, transcriptedEmbed], components: [deleteTicketActionRow] })
-            await interaction.channel.setName("ticket-fermé");
+                const transcriptTicketButton = new Discord.ButtonBuilder()
+                    .setLabel("Accéder au transcript")
+                    .setURL(`${transcriptURL}`)
+                    .setStyle(Discord.ButtonStyle.Link);
+                
+                const deleteTicketActionRow = new Discord.ActionRowBuilder()
+                    .addComponents(deleteTicketButton, transcriptTicketButton)
 
+                await interaction.reply({ embeds: [infoClosedEmbed], ephemeral: true })
+                await interaction.channel.send({ embeds: [closedEmbed, transcriptedEmbed], components: [deleteTicketActionRow] })
+                await interaction.channel.setName("ticket-fermé");
+            }
+        });
         }
 
         if (interaction.customId === "delete_ticket") {
